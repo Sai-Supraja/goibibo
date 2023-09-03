@@ -51,6 +51,7 @@ public class BookingFlight {
 	public void modalPopupClose() {
 
 		System.out.println("Entered modal popup method");
+		reportLogPass("modalPop");
 		WebElement modalPopup = driver.findElement(By.xpath(readXml("modal")));
 		if (modalPopup.isDisplayed()) {
 			driver.findElement(By.xpath(readXml("modalclose"))).click();
@@ -64,6 +65,7 @@ public class BookingFlight {
 		if (!flightsLinkAttribute.contains("active")) {
 			flightsLink.click();
 		}
+		reportLogPass("links clicked");
 	}
 
 	public void selectRoundTrip() {
@@ -83,6 +85,8 @@ public class BookingFlight {
 				break;
 			}
 		}
+		reportLogPass("From Flight");
+		reportLogPass(fromValues.toString());
 	}
 
 	public void toFlight(HashMap<String, String> testData) throws InterruptedException {
@@ -555,7 +559,7 @@ public class BookingFlight {
 		NodeList nodeList = document.getElementsByTagName("locator");
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
-			System.out.println("\nCurrent element: " + node.getNodeName());
+			//System.out.println("\nCurrent element: " + node.getNodeName());
 			if (node.getNodeType() == node.ELEMENT_NODE) {
 				Element element = (Element) node;
 				locatorValue = element.getElementsByTagName(objName).item(0).getTextContent();
