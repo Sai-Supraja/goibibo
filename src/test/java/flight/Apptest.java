@@ -1,7 +1,5 @@
 package flight;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -44,7 +42,7 @@ public class Apptest extends Basetest {
 		// Close the modal popup
 		app.modalPopupClose();
 
-		app.flightsLinkClick();
+		//app.flightsLinkClick();
 		app.selectRoundTrip();
 		app.fromFlight(testData);
 		app.toFlight(testData);
@@ -94,7 +92,7 @@ public class Apptest extends Basetest {
 
 		// Get test data from a JSON file
 		List<HashMap<String, String>> data = getJsonData(
-				System.getProperty("user.dir") + "//src//test//java//DataReader//testData.json");
+				System.getProperty("user.dir") + "//src//test//resources//Testdata.json");
 
 		// Return test data as a 2D array
 		return new Object[][] { { data.get(0) } };

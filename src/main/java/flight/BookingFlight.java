@@ -51,7 +51,6 @@ public class BookingFlight {
 	public void modalPopupClose() {
 
 		System.out.println("Entered modal popup method");
-		messages = "fsfsdfsdfdsfs";
 		WebElement modalPopup = driver.findElement(By.xpath(readXml("modal")));
 		if (modalPopup.isDisplayed()) {
 			driver.findElement(By.xpath(readXml("modalclose"))).click();
