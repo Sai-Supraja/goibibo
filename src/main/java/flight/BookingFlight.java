@@ -49,98 +49,96 @@ public class BookingFlight {
 	}
 
 	public void modalPopupClose() {
-
-		System.out.println("Entered modal popup method");
-		reportLogPass("modalPop");
-		WebElement modalPopup = driver.findElement(By.xpath(readXml("modal")));
-		if (modalPopup.isDisplayed()) {
-			driver.findElement(By.xpath(readXml("modalclose"))).click();
-		}
+	    System.out.println("Entered modal popup method");
+	    reportLogPass("modalPop"); 
+	    WebElement modalPopup = driver.findElement(By.xpath(readXml("modal")));
+	    if (modalPopup.isDisplayed()) {
+	        driver.findElement(By.xpath(readXml("modalclose"))).click();
+	    }
 	}
 
 	public void flightsLinkClick() throws SAXException, IOException, ParserConfigurationException {
-		WebElement flightsLink = driver.findElement(By.xpath(readXml("flightslink")));
-		System.out.println(flightsLink.getText());
-		String flightsLinkAttribute = flightsLink.getAttribute("class");
-		if (!flightsLinkAttribute.contains("active")) {
-			flightsLink.click();
-		}
-		reportLogPass("links clicked");
+	    WebElement flightsLink = driver.findElement(By.xpath(readXml("flightslink")));
+	    System.out.println("Flights Link Text: " + flightsLink.getText());
+	    String flightsLinkAttribute = flightsLink.getAttribute("class");
+	    if (!flightsLinkAttribute.contains("active")) {
+	        flightsLink.click();
+	    }
+	    reportLogPass("links clicked"); 
 	}
 
 	public void selectRoundTrip() {
-		driver.findElement(By.xpath(readXml("roundtripbutton"))).click();
-
+	    driver.findElement(By.xpath(readXml("roundtripbutton"))).click();
 	}
 
 	public void fromFlight(HashMap<String, String> testData) throws InterruptedException {
-		String fromValue = testData.get("from");
-		driver.findElement(By.xpath(readXml("fromfield"))).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath(readXml("frominputfield"))).sendKeys(fromValue);
-		List<WebElement> fromValues = driver.findElements(By.xpath(readXml("fromvaluelist")));
-		for (int i = 0; i < fromValues.size(); i++) {
-			if (fromValues.get(i).getText().contains("BLR")) {
-				fromValues.get(i).click();
-				break;
-			}
-		}
-		reportLogPass("From Flight");
-		reportLogPass(fromValues.toString());
+	    String fromValue = testData.get("from");
+	    driver.findElement(By.xpath(readXml("fromfield"))).click();
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath(readXml("frominputfield"))).sendKeys(fromValue);
+	    List<WebElement> fromValues = driver.findElements(By.xpath(readXml("fromvaluelist")));
+	    for (int i = 0; i < fromValues.size(); i++) {
+	        if (fromValues.get(i).getText().contains("BLR")) {
+	            fromValues.get(i).click();
+	            break;
+	        }
+	    }
+	    reportLogPass("From Flight"); 
+	    System.out.println("From Values: " + fromValues.toString());
 	}
 
 	public void toFlight(HashMap<String, String> testData) throws InterruptedException {
-		String toValue = testData.get("to");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath(readXml("toinputfield"))).sendKeys(toValue);
-		List<WebElement> toValues = driver.findElements(By.xpath(readXml("tovaluelist")));
-		for (int i = 0; i < toValues.size(); i++) {
-			if (toValues.get(i).getText().contains("BOM")) {
-				toValues.get(i).click();
-				break;
-			}
-		}
+	    String toValue = testData.get("to");
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath(readXml("toinputfield"))).sendKeys(toValue);
+	    List<WebElement> toValues = driver.findElements(By.xpath(readXml("tovaluelist")));
+	    for (int i = 0; i < toValues.size(); i++) {
+	        if (toValues.get(i).getText().contains("BOM")) {
+	            toValues.get(i).click();
+	            break;
+	        }
+	    }
 	}
 
 	public void departureDateSelect(HashMap<String, String> testData, String departureDate, String departureMonth) {
-		DateSelect(testData, departureDate, departureMonth);
+	    DateSelect(testData, departureDate, departureMonth);
 	}
 
 	public void arrivalDateSelect(HashMap<String, String> testData, String arrivalDate, String arrivalMonth) {
-		driver.findElement(By.xpath(readXml("returntab"))).click();
-		DateSelect(testData, arrivalDate, arrivalMonth);
+	    driver.findElement(By.xpath(readXml("returntab"))).click();
+	    DateSelect(testData, arrivalDate, arrivalMonth);
 
-		driver.findElement(By.xpath(readXml("dateselection_donebutton"))).click();
+	    driver.findElement(By.xpath(readXml("dateselection_donebutton"))).click();
 	}
 
 	public void DateSelect(HashMap<String, String> testData, String date, String month) {
-		// driver.findElement(By.xpath(readXml("departure"))).click();
-		List<WebElement> daypickerMonth = driver.findElements(By.xpath(readXml("daypickermonth")));
+	    // driver.findElement(By.xpath(readXml("departure"))).click();
+	    List<WebElement> daypickerMonth = driver.findElements(By.xpath(readXml("daypickermonth")));
 
-		for (int monthCount = 0; monthCount < daypickerMonth.size(); monthCount++) {
-			System.out.println("Month: " + daypickerMonth.get(monthCount).getText());
-			if (daypickerMonth.get(monthCount).getText().contains(month)) {
+	    for (int monthCount = 0; monthCount < daypickerMonth.size(); monthCount++) {
+	        System.out.println("Month: " + daypickerMonth.get(monthCount).getText());
+	        if (daypickerMonth.get(monthCount).getText().contains(month)) {
 
-				String MonthValue = daypickerMonth.get(monthCount).getText();
-				List<WebElement> daypickerDate = driver
-						.findElements(By.xpath(readXml("daypickerdate").replace("MONTH", MonthValue)));
-				for (int dateCount = 0; dateCount < daypickerDate.size(); dateCount++) {
-					if (daypickerDate.get(dateCount).getText().contains(date)) {
-						System.out.println("date: " + daypickerDate.get(dateCount).getText());
-						daypickerDate.get(dateCount).click();
-						break;
-					}
-				}
+	            String MonthValue = daypickerMonth.get(monthCount).getText();
+	            List<WebElement> daypickerDate = driver
+	                    .findElements(By.xpath(readXml("daypickerdate").replace("MONTH", MonthValue)));
+	            for (int dateCount = 0; dateCount < daypickerDate.size(); dateCount++) {
+	                if (daypickerDate.get(dateCount).getText().contains(date)) {
+	                    System.out.println("date: " + daypickerDate.get(dateCount).getText());
+	                    daypickerDate.get(dateCount).click();
+	                    break;
+	                }
+	            }
 
-				break;
-			}
+	            break;
+	        }
 
-			else {
-				driver.findElement(By.xpath(readXml("nextmontharrow"))).click();
-			}
-		}
-
+	        else {
+	            driver.findElement(By.xpath(readXml("nextmontharrow"))).click();
+	        }
+	    }
 	}
+
 
 	public void addAdults(String totalAdults) {
 		addPassengers(totalAdults, "Adults");
@@ -559,7 +557,7 @@ public class BookingFlight {
 		NodeList nodeList = document.getElementsByTagName("locator");
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
-			//System.out.println("\nCurrent element: " + node.getNodeName());
+			// System.out.println("\nCurrent element: " + node.getNodeName());
 			if (node.getNodeType() == node.ELEMENT_NODE) {
 				Element element = (Element) node;
 				locatorValue = element.getElementsByTagName(objName).item(0).getTextContent();
