@@ -1,0 +1,67 @@
+<locator>
+	<modal>//div[@class="cm__modal"]</modal>
+	<modalclose>//span[@class='logSprite icClose']</modalclose>
+	<flightslink>"//a[@class='gi-header-logo__home']/following-sibling::ul/li/a"</flightslink>
+	<roundtripbutton>//p[text()='Round-trip']</roundtripbutton>
+	<fromfield>//span[text()='From']/following-sibling::p</fromfield>
+	<frominputfield>//span[text()='From']/following-sibling::input</frominputfield>
+	<fromvaluelist>//span[text()='From']/parent::div/following-sibling::div/ul/li</fromvaluelist>
+	
+	<tofield>//span[text()='To']/following-sibling::p</tofield>
+	
+	<toinputfield>//span[text()='To']/following-sibling::input</toinputfield>
+	<tovaluelist>//span[text()='To']/parent::div/following-sibling::ul/li</tovaluelist>
+	
+	<departure>//span[text()='Departure']/parent::div</departure>
+	
+	<daypickermonth>//div[@class='DayPicker-Month']/div[@class='DayPicker-Caption']/div</daypickermonth>
+	<nextmontharrow>//span[@aria-label='Next Month']</nextmontharrow>
+	<daypickerdate>//div[contains(text(),'MONTH')]/parent::div/following-sibling::div//div[@class='DayPicker-Day']</daypickerdate>
+	<dateselection_donebutton>//span[text()='Done']</dateselection_donebutton>
+	<returntab>//span[text()='Return']</returntab>
+	<passengercount>//p[text()='passenger']/following-sibling::div/span[2]</passengercount>
+	<addpassengers>//p[text()='passenger']/following-sibling::div/span[3]</addpassengers>
+	<travelclass>//li[text()='economy']</travelclass>
+	<travelclass_donebutton>//a[text()='Done']</travelclass_donebutton>
+	<searchflights>//span[text()='SEARCH FLIGHTS']</searchflights>
+	<roundtripoffersheader>//div[text()='Round Trip Offers']</roundtripoffersheader>
+	<fromflights>//div[@class='flexRow justifyBetween']/div[1]/div</fromflights>	
+	<returnflights>//div[@class='flexRow justifyBetween']/div[2]/div</returnflights>
+	<fromflightname>//div[@class='flexRow justifyBetween']/div[1]/div//span[@class='padR10 padT3']</fromflightname>
+	<returnflightname>//div[@class='flexRow justifyBetween']/div[2]/div//span[@class='padR10 padT3']</returnflightname>
+	<fromflight_radiobutton>//div[@class='flexRow justifyBetween']/div[1]/div[INDEX]//input[@type='radio']/following-sibling::label</fromflight_radiobutton>
+	<returnflight_radiobutton>//div[@class='flexRow justifyBetween']/div[2]/div[INDEX]//input[@type='radio']/following-sibling::label</returnflight_radiobutton>
+	<bookbutton>input[value='Book']</bookbutton>
+	<cabinbaggage>//span[text()='Cabin baggage']/parent::td/following-sibling::td[1]</cabinbaggage>
+	<checkinbaggage>//span[text()='Check-in baggage']/parent::td/following-sibling::td[1]</checkinbaggage>
+	<datechangefee>//span[text()='Date change fee, per passenger']/parent::td/following-sibling::td[1]</datechangefee>
+	<cancellationfee>//span[text()='Cancellation fee, per passenger']/parent::td/following-sibling::td[1]</cancellationfee>
+	<seat>//span[text()='Seat']/parent::td/following-sibling::td[1]</seat>
+	<roundtripfare>//span[contains(text(),'Total Round Trip Base Fare')]/following-sibling::span</roundtripfare>
+	<nextbutton>//button[text()='Next']</nextbutton>
+	<proceedbutton>//button[text()='Proceed']</proceedbutton>
+	<faresummary>//div[text()='Fare Summary']/following-sibling::div</faresummary>
+	<reviewbookingheader>//div[text()='Review your booking']</reviewbookingheader>
+	<reconformingpopup>(//div[contains(@class,'Modal')])[2]</reconformingpopup>
+	<okbutton>//button[@value='OK']</okbutton>
+	<confirmcheckerror>//label[@for='confirm_check']</confirmcheckerror>
+	<confirmcheckbox>//input[@name='confirm_check']/following-sibling::b</confirmcheckbox>
+	<adultsexpand>//span[text()='TRAVELLER DETAILS']/parent::div/parent::div/following-sibling::div//span[contains(text(),'Adult')]</adultsexpand>
+	<childexpand>//span[text()='TRAVELLER DETAILS']/parent::div/parent::div/following-sibling::div//span[contains(text(),'Child')]</childexpand>
+	<infantsexpand>//span[text()='TRAVELLER DETAILS']/parent::div/parent::div/following-sibling::div//span[contains(text(),'Infant')]</infantsexpand>
+	<firstnameerror>//input[@name='givenname']/following-sibling::span</firstnameerror>
+	<dateofbirtherror>//div[text()='Date of birth']/parent::div/div/following-sibling::div/div[2]</dateofbirtherror>
+	<emailiderror>//div[text()='Email Address']/parent::div//span</emailiderror>
+	<mobilenumerror>//input[@name='mobile']/following-sibling::span</mobilenumerror>
+	<firstname>//input[@name='givenname']</firstname>
+	<adultgender>//div[text()='Adult']/following-sibling::div//select</adultgender>
+	<childgender>//div[text()='Child']/following-sibling::div//select</childgender>
+	<infantgender>//div[text()='Infant']/following-sibling::div//select</infantgender>
+	<dayselect>(//div[text()='Date of birth']/following-sibling::div//select)[1]</dayselect>
+	<monthselect>(//div[text()='Date of birth']/following-sibling::div//select)[2]</monthselect>
+	<yearselect>(//div[text()='Date of birth']/following-sibling::div//select)[3]</yearselect>
+	<emailid>//input[@name='email']</emailid>
+	<mobilenumber>//input[@name='mobile']</mobilenumber>
+	<proceedtopayment>//button[text()='Proceed To Payment']</proceedtopayment>
+	
+</locator>

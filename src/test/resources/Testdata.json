@@ -1,0 +1,31 @@
+[
+	{
+		"from": "BLR",
+		"to": "BOM",
+		"departuremonth": "November 2023",
+		"departuredate" : 1,
+		"arrivalmonth": "December 2023",
+		"arrivaldate" : 1,
+		"adults" : 3,
+		"children" : 2,
+		"infants" : 1,
+		"firstnameerror" : "First & Middle Name is mandatory",
+		"dateofbirtherror" : "Date of birth is mandatory",
+		"emailiderror" : "Email ID cannot be empty",
+		"mobilenumbererror" : "Mobile Number cannot be empty",
+		"adultgender" : "Male",
+		"adult1" : "John",
+		"adult2" : "Paul",
+		"adult3" : "Thomas",
+		"childgender" : "Male",
+		"child1" : "Harry",
+		"child2" : "Nick",
+		"infantgender" : "Male",
+		"infant" : "Alex",
+		"dayofbirth" : "03",
+		"monthofbirth" : "Feb",
+		"yearofbirth" : "2023",
+		"emailid" : "xyz@gmail.com",
+		"mobilenumber" : 9846752830
+	}
+]
