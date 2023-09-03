@@ -59,6 +59,7 @@ Follow these steps to set up and run the Goibibo Flight Booking Automation Test:
 
    - Right-click on the `testng.xml` file.
    - Select `Run As` -> `TestNG Suite` to execute the automation tests.
+   - Select project  `Run As` -> `Maven install` to execute tests.
 
 ## Project Structure
 
