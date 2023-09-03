@@ -17,8 +17,10 @@ Follow these steps to set up and run the Goibibo Flight Booking Automation Test:
 
 1. Clone this repository to your local machine:
 
-   ```bash
-   git clone [repo] (https://github.com/Sai-Supraja/goibibo.git)
+```bash
+   git clone https://github.com/Sai-Supraja/goibibo.git
+```
+   
 
 ## Setup and Configuration
 
